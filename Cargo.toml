@@ -1,0 +1,28 @@
+[package]
+name = "todo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web framework - like FastAPI for Rust
+axum = "0.7"
+# Async runtime - enables async/await
+tokio = { version = "1", features = ["full"] }
+# JSON serialization - like Pydantic models
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# HTTP types
+hyper = "1"
+tower = "0.4"
+tower-http = { version = "0.5", features = ["trace", "cors"] }
+# UUID for todo IDs
+uuid = { version = "1", features = ["v4", "serde"] }
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+# OpenTelemetry for distributed tracing
+opentelemetry = "0.24"
+opentelemetry_sdk = { version = "0.24", features = ["rt-tokio-current-thread"] }
+opentelemetry-otlp = "0.17"
+tracing = "0.1"
+tracing-opentelemetry = "0.25"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
